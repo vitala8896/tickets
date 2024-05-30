@@ -1,0 +1,17 @@
+@import './variables';
+@import './mixins';
+
+.app {
+  &__header {
+    text-align: center;
+    padding: 16px;
+    background-color: #f8f9fa;
+  }
+
+  &__main {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

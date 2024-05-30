@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './styles/main.scss';
 import App from './App';
+import { configureStore } from '@reduxjs/toolkit';
 import reportWebVitals from './reportWebVitals';
+import ticketReducer from './features/tickets/ticketSlice';
+import { Provider } from 'react-redux';
+
+
+const store = configureStore({
+  reducer: {
+    tickets: ticketReducer,
+  },
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

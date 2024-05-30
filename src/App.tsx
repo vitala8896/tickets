@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setTickets } from './features/tickets/ticketSlice';
+import TicketFilter from './features/tickets/TicketFilter';
+import TicketList from './features/tickets/TicketList';
+import Logo from './components/Logo';
+import ticketsData from './tickets.json';
+import './styles/main.scss';
 
-function App() {
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setTickets(ticketsData));
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app__header">
+        <Logo />
       </header>
+      <main className="app__main">
+        <TicketFilter />
+        <TicketList />
+      </main>
     </div>
   );
-}
+};
 
 export default App;
+

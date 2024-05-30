@@ -1,0 +1,17 @@
+// src/components/Logo.scss
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    transition: box-shadow 0.2s;
+  
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

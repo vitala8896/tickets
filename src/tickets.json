@@ -1,0 +1,25 @@
+[
+    {
+      "price": "$500",
+      "from": "LHR",
+      "to": "DXB",
+      "duration": "7h 30m",
+      "stops": "1 пересадка"
+    },
+    {
+      "price": "$700",
+      "from": "LHR",
+      "to": "DXB",
+      "duration": "8h 15m",
+      "stops": "2 пересадки"
+    },
+    {
+      "price": "$450",
+      "from": "LHR",
+      "to": "DXB",
+      "duration": "6h 45m",
+      "stops": "без пересадок"
+    }
+]
+  
+  
