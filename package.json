@@ -1,8 +1,8 @@
 {
   "name": "ticket",
   "version": "0.1.0",
-  "private": false,
-  "homepage": "https://vitala8896.github.io/tickets/public/index.html",
+  "private": true,
+  "homepage": "https://vitala8896.github.io/tickets/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
     "@testing-library/jest-dom": "^5.17.0",
