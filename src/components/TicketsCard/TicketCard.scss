@@ -1,4 +1,7 @@
 .ticket-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     height: 184px;
     background-color: white;
     border-radius: 8px;
@@ -22,7 +25,7 @@
       font-weight: 600;
       img {      
         width: 119px;
-        height: 100%;
+        height: 41px;
       }
     }
 
@@ -30,6 +33,7 @@
       &_line {
         display: flex;
         justify-content: space-between;
+        padding: 5px 0;
       }
       .transfer {
         color: #A0B0B9;
@@ -38,6 +42,10 @@
 
     .transfer {
       text-transform: uppercase;
-    }    
+    } 
+    
+    .graytext {
+      color: #A0B0B9;
+    }
   }
   

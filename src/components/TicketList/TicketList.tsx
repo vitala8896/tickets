@@ -29,14 +29,14 @@ const TicketList: React.FC = () => {
     if (sort === 'cheapest') {
       return a.price - b.price;
     } else if (sort === 'fastest') {
-      const durationA = parseInt(a.duration.split('h')[0]) * 60 + parseInt(a.duration.split(' ')[1].replace('m', ''));
-      const durationB = parseInt(b.duration.split('h')[0]) * 60 + parseInt(b.duration.split(' ')[1].replace('m', ''));
-      return durationA - durationB;
+      const wayA = parseInt(a.way.split('h')[0]) * 60 + parseInt(a.way.split(' ')[1].replace('m', ''));
+      const wayB = parseInt(b.way.split('h')[0]) * 60 + parseInt(b.way.split(' ')[1].replace('m', ''));
+      return wayA - wayB;
     } else if (sort === 'optimal') {
-      const durationA = parseInt(a.duration.split('h')[0]) * 60 + parseInt(a.duration.split(' ')[1].replace('m', ''));
-      const durationB = parseInt(b.duration.split('h')[0]) * 60 + parseInt(b.duration.split(' ')[1].replace('m', ''));
-      if (durationA !== durationB) {
-        return durationA - durationB;
+      const wayA = parseInt(a.way.split('h')[0]) * 60 + parseInt(a.way.split(' ')[1].replace('m', ''));
+      const wayB = parseInt(b.way.split('h')[0]) * 60 + parseInt(b.way.split(' ')[1].replace('m', ''));
+      if (wayA !== wayB) {
+        return wayA - wayB;
       } else if (a.transfers !== b.transfers) {
         return a.transfers - b.transfers;
       } else {

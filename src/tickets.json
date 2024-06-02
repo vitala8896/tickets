@@ -2,49 +2,72 @@
   {
     "id": 1,
     "price": 13300,
-    "origin": "LHR – DXB",
-    "destination": "DXB – LHR",
-    "duration": "7h 30m",
-    "transfers": 1
+    "start": "10:45 – 08:00",
+    "end": "11:20 – 00:50",
+    "way": "34h 15m",
+    "inway": "16h 30m",
+    "transfers": 1,
+    "country": "HKG"
   },
   {
     "id": 2,
     "price": 15100,
-    "origin": "LHR – DXB",
-    "destination": "DXB – LHR",
-    "duration": "5h 30m",
-    "transfers": 2
+    "start": "10:45 – 08:00",
+    "end": "11:20 – 00:50",
+    "way": "17h 15m",
+    "inway": "40h 30m",
+    "transfers": 2,
+    "country": "HKG, JNB"
   },
   {
     "id": 3,
-    "price": 21400,
-    "origin": "LHR – DXB",
-    "destination": "DXB – LHR",
-    "duration": "6h 30m",
-    "transfers": 3
+    "price": 15400,
+    "start": "10:45 – 08:00",
+    "end": "11:20 – 00:50",
+    "way": "20h 15m",
+    "inway": "13h 30m",
+    "transfers": 1,
+    "country": "HKG"
   },
   {
     "id": 4,
-    "price": 23900,
-    "origin": "LHR – DXB",
-    "destination": "DXB – LHR",
-    "duration": "7h 30m",
-    "transfers": 0
+    "price": 21400,
+    "start": "10:45 – 08:00",
+    "end": "11:20 – 00:50",
+    "way": "21h 15m",
+    "inway": "12h 30m",
+    "transfers": 3,
+    "country": "HKG, JNB, JNB"
   },
   {
     "id": 5,
     "price": 23900,
-    "origin": "LHR – DXB",
-    "destination": "DXB – LHR",
-    "duration": "7h 30m",
-    "transfers": 0
+    "start": "10:45 – 08:00",
+    "end": "11:20 – 00:50",
+    "way": "34h 15m",
+    "inway": "16h 30m",
+    "transfers": 0,
+    "country": ""
   },
   {
     "id": 6,
-    "price": 23900,
-    "origin": "LHR – DXB",
-    "destination": "DXB – LHR",
-    "duration": "7h 30m",
-    "transfers": 0
+    "price": 18200,
+    "start": "10:45 – 08:00",
+    "end": "11:20 – 00:50",
+    "way": "34h 15m",
+    "inway": "16h 30m",
+    "transfers": 0,
+    "country": ""
+  }
+  ,
+  {
+    "id": 7,
+    "price": 22700,
+    "start": "10:45 – 08:00",
+    "end": "11:20 – 00:50",
+    "way": "14h 15m",
+    "inway": "18h 30m",
+    "transfers": 3,
+    "country": "HKG, JNB, JNB"
   }
 ]

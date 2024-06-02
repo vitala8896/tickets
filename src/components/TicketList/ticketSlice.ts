@@ -3,10 +3,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface Ticket {
   id: number;
   price: number;
-  origin: string;
-  destination: string;
-  duration: string;
+  start: string;
+  end: string;
+  way: string;
+  inway: string;
   transfers: number;
+  country: string;
 }
 
 interface FilterState {
