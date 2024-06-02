@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tickets/static/css/main.89d3a6f9.css",
-    "main.js": "/tickets/static/js/main.761e07dd.js",
+    "main.css": "/tickets/static/css/main.8abdce3a.css",
+    "main.js": "/tickets/static/js/main.5fde1bae.js",
     "static/js/453.1f8eaef5.chunk.js": "/tickets/static/js/453.1f8eaef5.chunk.js",
     "static/media/airline.png": "/tickets/static/media/airline.63e6e841d58f68b445c3.png",
     "static/media/logo.png": "/tickets/static/media/logo.db4a031455f4847532c3.png",
     "index.html": "/tickets/index.html",
-    "main.89d3a6f9.css.map": "/tickets/static/css/main.89d3a6f9.css.map",
-    "main.761e07dd.js.map": "/tickets/static/js/main.761e07dd.js.map",
+    "main.8abdce3a.css.map": "/tickets/static/css/main.8abdce3a.css.map",
+    "main.5fde1bae.js.map": "/tickets/static/js/main.5fde1bae.js.map",
     "453.1f8eaef5.chunk.js.map": "/tickets/static/js/453.1f8eaef5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89d3a6f9.css",
-    "static/js/main.761e07dd.js"
+    "static/css/main.8abdce3a.css",
+    "static/js/main.5fde1bae.js"
   ]
 }
