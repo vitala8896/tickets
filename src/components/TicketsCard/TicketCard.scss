@@ -1,19 +1,43 @@
 .ticket-card {
+    height: 184px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 16px;
-    margin: 16px;
+    margin: 16px 0;
+    cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-  
+    
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
   
     &__price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 1.5em;
-      font-weight: bold;
+      color: #2196F3;
+      font-weight: 600;
+      img {      
+        width: 119px;
+        height: 100%;
+      }
     }
+
+    &__info {
+      &_line {
+        display: flex;
+        justify-content: space-between;
+      }
+      .transfer {
+        color: #A0B0B9;
+      }
+    }
+
+    .transfer {
+      text-transform: uppercase;
+    }    
   }
   

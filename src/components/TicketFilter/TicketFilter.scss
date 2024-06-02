@@ -1,11 +1,41 @@
 .ticket-filter {
-    margin: 16px;
+  .my {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 10px;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+  box-sizing: border-box;
+  width: 232px;
+  height: 252px;
+  margin-bottom: 10px;
+
+  h2 {
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .filter-option {
+    padding: 7px 10px;
+
     label {
-      margin-right: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      input {
+        padding-left: 15px;
+      }
     }
-    select {
-      padding: 4px 8px;
-      border-radius: 4px;
+
+    &:hover {
+      background-color: #F1FCFF;
     }
   }
-  
+}

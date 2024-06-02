@@ -1,25 +1,50 @@
 [
-    {
-      "price": "$500",
-      "from": "LHR",
-      "to": "DXB",
-      "duration": "7h 30m",
-      "stops": "1 пересадка"
-    },
-    {
-      "price": "$700",
-      "from": "LHR",
-      "to": "DXB",
-      "duration": "8h 15m",
-      "stops": "2 пересадки"
-    },
-    {
-      "price": "$450",
-      "from": "LHR",
-      "to": "DXB",
-      "duration": "6h 45m",
-      "stops": "без пересадок"
-    }
+  {
+    "id": 1,
+    "price": 13300,
+    "origin": "LHR – DXB",
+    "destination": "DXB – LHR",
+    "duration": "7h 30m",
+    "transfers": 1
+  },
+  {
+    "id": 2,
+    "price": 15100,
+    "origin": "LHR – DXB",
+    "destination": "DXB – LHR",
+    "duration": "5h 30m",
+    "transfers": 2
+  },
+  {
+    "id": 3,
+    "price": 21400,
+    "origin": "LHR – DXB",
+    "destination": "DXB – LHR",
+    "duration": "6h 30m",
+    "transfers": 3
+  },
+  {
+    "id": 4,
+    "price": 23900,
+    "origin": "LHR – DXB",
+    "destination": "DXB – LHR",
+    "duration": "7h 30m",
+    "transfers": 0
+  },
+  {
+    "id": 5,
+    "price": 23900,
+    "origin": "LHR – DXB",
+    "destination": "DXB – LHR",
+    "duration": "7h 30m",
+    "transfers": 0
+  },
+  {
+    "id": 6,
+    "price": 23900,
+    "origin": "LHR – DXB",
+    "destination": "DXB – LHR",
+    "duration": "7h 30m",
+    "transfers": 0
+  }
 ]
-  
-  

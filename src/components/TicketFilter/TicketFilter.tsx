@@ -1,24 +1,76 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store';
 import { setFilter } from '../TicketList/ticketSlice';
 import './TicketFilter.scss';
 
 const TicketFilter: React.FC = () => {
   const dispatch = useDispatch();
+  const filter = useSelector((state: RootState) => state.tickets.filter);
 
-  const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(setFilter(event.target.value));
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = event.target;
+    dispatch(setFilter({ ...filter, [name]: checked }));
   };
 
   return (
     <div className="ticket-filter">
-      <label htmlFor="filter">Filter by stops: </label>
-      <select id="filter" onChange={handleFilterChange}>
-        <option value="all">Всі</option>
-        <option value="none">Без пересадок</option>
-        <option value="one">1 пересадка</option>
-        <option value="two">2 пересадки</option>
-      </select>
+      <h2>КІЛЬКІСТЬ ПЕРЕСАДОК</h2>
+      <div className="filter-option">      
+        <label>
+          <input
+            type="checkbox"
+            name="all"
+            checked={filter.all}
+            onChange={handleCheckboxChange}
+          />
+          Всі
+        </label>
+      </div>
+      <div className="filter-option">
+        <label>
+          <input
+            type="checkbox"
+            name="noTransfers"
+            checked={filter.noTransfers}
+            onChange={handleCheckboxChange}
+          />
+          Без пересадок
+        </label>
+      </div>
+      <div className="filter-option">
+        <label>
+          <input
+            type="checkbox"
+            name="oneTransfer"
+            checked={filter.oneTransfer}
+            onChange={handleCheckboxChange}
+          />
+          1 пересадка
+        </label>
+      </div>
+      <div className="filter-option">
+        <label>
+          <input
+            type="checkbox"
+            name="twoTransfers"
+            checked={filter.twoTransfers}
+            onChange={handleCheckboxChange}
+          />
+          2 пересадки
+        </label>
+      </div>
+      <div className="filter-option">
+        <label>
+          <input
+            type="checkbox"
+            name="threeTransfers"
+            checked={filter.threeTransfers}
+            onChange={handleCheckboxChange}
+          />
+          3 пересадки
+        </label>
+      </div>
     </div>
   );
 };

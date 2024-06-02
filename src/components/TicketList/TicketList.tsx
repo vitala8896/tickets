@@ -1,32 +1,83 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import TicketCard from '../TicketsCard/TicketCard';
-import './TicketList.scss';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
+import TicketCard from '../TicketsCard/TicketCard';
+import { setSort } from './ticketSlice';
+import './TicketList.scss';
 
 const TicketList: React.FC = () => {
-  const tickets = useSelector((state: RootState) => state.tickets.filteredTickets);
-  const [visibleCount, setVisibleCount] = useState(5);
+  const dispatch = useDispatch();
+  const tickets = useSelector((state: RootState) => state.tickets.items);
+  const filter = useSelector((state: RootState) => state.tickets.filter);
+  const sort = useSelector((state: RootState) => state.tickets.sort);
+  const [visibleTickets, setVisibleTickets] = useState(5);
 
-  const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 5);
+  const handleSortChange = (sortType: 'cheapest' | 'fastest' | 'optimal') => {
+    dispatch(setSort(sortType));
+  };
+
+  const filteredTickets = tickets.filter(ticket => {
+    if (filter.all) return true;
+    if (filter.noTransfers && ticket.transfers === 0) return true;
+    if (filter.oneTransfer && ticket.transfers === 1) return true;
+    if (filter.twoTransfers && ticket.transfers === 2) return true;
+    if (filter.threeTransfers && ticket.transfers === 3) return true;
+    return false;
+  });
+
+  filteredTickets.sort((a, b) => {
+    if (sort === 'cheapest') {
+      return a.price - b.price;
+    } else if (sort === 'fastest') {
+      const durationA = parseInt(a.duration.split('h')[0]) * 60 + parseInt(a.duration.split(' ')[1].replace('m', ''));
+      const durationB = parseInt(b.duration.split('h')[0]) * 60 + parseInt(b.duration.split(' ')[1].replace('m', ''));
+      return durationA - durationB;
+    } else if (sort === 'optimal') {
+      const durationA = parseInt(a.duration.split('h')[0]) * 60 + parseInt(a.duration.split(' ')[1].replace('m', ''));
+      const durationB = parseInt(b.duration.split('h')[0]) * 60 + parseInt(b.duration.split(' ')[1].replace('m', ''));
+      if (durationA !== durationB) {
+        return durationA - durationB;
+      } else if (a.transfers !== b.transfers) {
+        return a.transfers - b.transfers;
+      } else {
+        return a.price - b.price;
+      }
+    }
+    return 0;
+  });
+
+  const showMoreTickets = () => {
+    setVisibleTickets(prev => prev + 5); // Показати ще 5 квитків при кожному кліку
   };
 
   return (
     <div className="ticket-list">
-      {tickets.slice(0, visibleCount).map((ticket, index) => (
-        <TicketCard
-          key={index}
-          price={ticket.price}
-          from={ticket.from}
-          to={ticket.to}
-          duration={ticket.duration}
-          stops={ticket.stops}
-        />
+      <div className="ticket-list__tabs">
+        <button
+          className={`ticket-list__tab ${sort === 'cheapest' ? 'active' : ''}`}
+          onClick={() => handleSortChange('cheapest')}
+        >
+          Найдешевший
+        </button>
+        <button
+          className={`ticket-list__tab ${sort === 'fastest' ? 'active' : ''}`}
+          onClick={() => handleSortChange('fastest')}
+        >
+          Найшвидший
+        </button>
+        <button
+          className={`ticket-list__tab ${sort === 'optimal' ? 'active' : ''}`}
+          onClick={() => handleSortChange('optimal')}
+        >
+          Оптимальний
+        </button>
+      </div>
+      {filteredTickets.slice(0, visibleTickets).map((ticket) => (
+        <TicketCard key={ticket.id} ticket={ticket} />
       ))}
-      {visibleCount < tickets.length && (
-        <button className="ticket-list__load-more" onClick={handleLoadMore}>
-          Завантажити ще 5 квитків
+      {filteredTickets.length >= visibleTickets && (
+        <button className="show-more-button" onClick={showMoreTickets}>
+          Показати ще 5 квитків
         </button>
       )}
     </div>
