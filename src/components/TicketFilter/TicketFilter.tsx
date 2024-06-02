@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setFilter } from './ticketSlice';
+import { setFilter } from '../TicketList/ticketSlice';
 import './TicketFilter.scss';
 
 const TicketFilter: React.FC = () => {

@@ -1,10 +1,11 @@
 import React from 'react';
 import './Logo.scss';
+import LogoImg from './../../assets/logo.png';
 
 const Logo: React.FC = () => {
   return (
     <a href="/" className="logo">
-      <img src="/assets/logo.png" alt="Company Logo" />
+      <img src={LogoImg} alt="Logo" />
     </a>
   );
 };

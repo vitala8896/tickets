@@ -5,7 +5,7 @@ import './styles/main.scss';
 import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
 import reportWebVitals from './reportWebVitals';
-import ticketReducer from './features/tickets/ticketSlice';
+import ticketReducer from './components/TicketList/ticketSlice';
 import { Provider } from 'react-redux';
 
 

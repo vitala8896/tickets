@@ -1,15 +1,8 @@
 import React from 'react';
 import './TicketCard.scss';
-
-interface TicketProps {
-  price: string;
-  from: string;
-  to: string;
-  duration: string;
-  stops: string;
-}
-
-const TicketCard: React.FC<TicketProps> = ({ price, from, to, duration, stops }) => {
+import { TicketsProps } from './TicketsType';
+ 
+const TicketCard: React.FC<TicketsProps> = ({ price, from, to, duration, stops }) => {
   return (
     <div className="ticket-card">
       <p className="ticket-card__price">Price: {price}</p>

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setTickets } from './features/tickets/ticketSlice';
-import TicketFilter from './features/tickets/TicketFilter';
-import TicketList from './features/tickets/TicketList';
-import Logo from './components/Logo';
+import { setTickets } from './components/TicketList/ticketSlice';
+import TicketFilter from './components/TicketFilter/TicketFilter';
+import TicketList from './components/TicketList/TicketList';
+import Logo from './components/Logo/Logo';
 import ticketsData from './tickets.json';
 import './styles/main.scss';
 

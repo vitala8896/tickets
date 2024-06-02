@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import TicketCard from '../../components/TicketCard';
+import TicketCard from '../TicketsCard/TicketCard';
 import './TicketList.scss';
 import { RootState } from '../../store';
 
